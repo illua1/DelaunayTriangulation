@@ -593,8 +593,15 @@ static void build_polygon(const std::vector<std::pair<float2, float>> &tris_para
                 r_polygon_to_remap);
 }
 
-#define assert_msg(str_name, condition)\
-if (!(condition)) {std::cout << str_name.str();} assert(condition);
+#ifndef NDEBUG
+  #define assert_msg(str_name, condition)\
+    if (!(condition)) {\
+      std::cout << str_name.str();\
+    }\
+    assert(condition);
+#else
+  #define assert_msg(str_name, condition)
+#endif
 
 static std::shared_ptr<Trangulation> delaunay(const std::shared_ptr<Points> points)
 {

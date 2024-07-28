@@ -4,7 +4,7 @@ project(DelaunayTriangulation)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# set(CMAKE_CXX_FLAGS "-O3 -DNDEBUG -Wall")
+# set(CMAKE_CXX_FLAGS "-DO3 -DNDEBUG /EHsc")
 
 add_executable(Main main.cpp)
 
